@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapGrid | Smart Image Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-palette"></i>
+            <span>SnapGrid</span>
+        </div>
+        <div class="header-actions">
+            <button class="theme-btn" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Discover Visual Stories</h1>
+        <p>Explore 40+ curated images with smart filtering</p>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search images...">
+                <button class="search-btn" id="search-clear">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-tags">
+                <span class="tag" data-search="mountain">mountain</span>
+                <span class="tag" data-search="ocean">ocean</span>
+                <span class="tag" data-search="city">city</span>
+                <span class="tag" data-search="food">food</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Quick Filters -->
+        <div class="quick-filters">
+            <div class="filter-group">
+                <h3><i class="fas fa-sliders-h"></i> Quick Filters</h3>
+                <div class="filter-chips" id="filter-chips"></div>
+            </div>
+            
+            <div class="display-controls">
+                <span id="image-count">0 images</span>
+                <div class="view-toggle">
+                    <button class="view-option active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-option" data-view="compact">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="gallery" id="gallery"></div>
+
+        <!-- No Results -->
+        <div class="no-results" id="no-results">
+            <div class="no-results-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <h3>No images found</h3>
+            <p>Try changing your search or filters</p>
+            <button class="btn" id="reset-all">Show All Images</button>
+        </div>
+
+        <!-- Load More -->
+        <div class="load-more" id="load-more">
+            <button class="btn" id="load-more-btn">
+                <i class="fas fa-plus"></i> Load More
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>SnapGrid Gallery &copy; 2024</p>
+        <p class="tech">Built with HTML5 • CSS3 Grid • Vanilla JS</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="lightbox-body">
+                <div class="lightbox-image-container">
+                    <img id="lightbox-img" src="" alt="">
+                </div>
+                <div class="lightbox-info">
+                    <h2 id="lightbox-title"></h2>
+                    <div class="lightbox-meta">
+                        <span class="badge" id="lightbox-category"></span>
+                        <span class="views" id="lightbox-views">
+                            <i class="fas fa-eye"></i> 0
+                        </span>
+                    </div>
+                    <p id="lightbox-description"></p>
+                    <div class="lightbox-actions">
+                        <button class="action-btn" id="like-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="action-btn" id="share-btn">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                        <button class="action-btn" id="download-btn">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
